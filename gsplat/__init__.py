@@ -4,6 +4,7 @@ from .compression import PngCompression
 from .cuda._torch_impl import accumulate
 from .cuda._torch_impl_2dgs import accumulate_2dgs
 from .cuda._wrapper import (
+    compute_3D_smoothing_filter,
     fully_fused_projection,
     fully_fused_projection_2dgs,
     isect_offset_encode,
@@ -15,6 +16,7 @@ from .cuda._wrapper import (
     rasterize_to_pixels,
     rasterize_to_pixels_2dgs,
     spherical_harmonics,
+    triangulate,
     world_to_cam,
 )
 from .exporter import export_splats
@@ -52,5 +54,7 @@ all = [
     "accumulate_2dgs",
     "rasterization_2dgs_inria_wrapper",
     "export_splats",
+    "compute_3D_smoothing_filter",
+    "triangulate",
     "__version__",
 ]

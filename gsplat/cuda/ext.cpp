@@ -65,4 +65,16 @@ PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
         "rasterize_to_pixels_2dgs_bwd", &gsplat::rasterize_to_pixels_2dgs_bwd
     );
     m.def("rasterize_to_indices_2dgs", &gsplat::rasterize_to_indices_2dgs);
+
+    m.def(
+        "compute_3D_smoothing_filter_fwd",
+        &gsplat::compute_3D_smoothing_filter_fwd_tensor
+    );
+    m.def("project_points_fwd", &gsplat::project_points_fwd_tensor);
+    m.def("points_isect_tiles", &gsplat::points_isect_tiles_tensor);
+    m.def("integrate_to_points_fwd", &gsplat::integrate_to_points_fwd_tensor);
+    m.def("view_to_gaussians_fwd", &gsplat::view_to_gaussians_fwd_tensor);
+
+    // tetra-nerf
+    m.def("triangulate", &gsplat::py_triangulate);
 }
